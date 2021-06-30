@@ -15,6 +15,7 @@ namespace SnakeAndLadderSimulation
              * initialising position of the player
              * ........................................*/
             int playerPos = 0;
+            int finalPos = 100;
            
             Console.WriteLine("Snake and Ladder Game");
             int position = 0;
@@ -23,28 +24,32 @@ namespace SnakeAndLadderSimulation
              * creating a Random method to get the number when die is rolled
              * ......................................*/
             Random random = new Random();
-            int roll = random.Next(1, 7);
-           // Console.WriteLine("Player Throws : "+roll);
-           // playerPos += position;
-
-            int options = random.Next(1, 4);
-            switch(options)
+            while (playerPos < finalPos)
             {
-                case noPlay:
-                    Console.WriteLine("PLayer stays in the same position");
-                    break;
-                case ladder:
-                    Console.WriteLine("Moves ahead");
-                    playerPos = playerPos + roll;
-                    break;
-                case snake:
-                    Console.WriteLine("Goes Behind");
-                    playerPos = (playerPos - roll) <0 ? 0 : (playerPos - roll) ;
-                    break;
-                default:
-                    break;
+                int roll = random.Next(1, 7);
+                // Console.WriteLine("Player Throws : "+roll);
+                // playerPos += position;
 
+                int options = random.Next(1, 4);
+                switch (options)
+                {
+                    case noPlay:
+                        Console.WriteLine("PLayer stays in the same position");
+                        break;
+                    case ladder:
+                        Console.WriteLine("Moves ahead");
+                        playerPos = playerPos + roll;
+                        break;
+                    case snake:
+                        Console.WriteLine("Goes Behind");
+                        playerPos = (playerPos - roll) < 0 ? 0 : (playerPos - roll);
+                        break;
+                    default:
+                        break;
+
+                }
             }
+
             Console.WriteLine("The player is at "+playerPos+ " position");
             Console.Read();
         }
