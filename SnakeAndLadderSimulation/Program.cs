@@ -48,9 +48,16 @@ namespace SnakeAndLadderSimulation
                         break;
 
                 }
+                if (playerPos > finalPos)
+                {
+                    playerPos = playerPos - roll;
+                }
+                Console.WriteLine("Player Position :" +playerPos);
             }
-
-            Console.WriteLine("The player is at "+playerPos+ " position");
+            /*.....................................................................
+             * On reaching final position players wins the game 
+             * .................................................*/
+            Console.WriteLine("Congratulations!!!!! You Won .......");
             Console.Read();
         }
     }
