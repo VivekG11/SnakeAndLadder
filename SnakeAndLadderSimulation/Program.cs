@@ -16,6 +16,7 @@ namespace SnakeAndLadderSimulation
              * ........................................*/
             int playerPos = 0;
             int finalPos = 100;
+            int rollCount = 1;
            
             Console.WriteLine("Snake and Ladder Game");
             int position = 0;
@@ -31,6 +32,7 @@ namespace SnakeAndLadderSimulation
                 // playerPos += position;
 
                 int options = random.Next(1, 4);
+                rollCount++;
                 switch (options)
                 {
                     case noPlay:
@@ -58,6 +60,7 @@ namespace SnakeAndLadderSimulation
              * On reaching final position players wins the game 
              * .................................................*/
             Console.WriteLine("Congratulations!!!!! You Won .......");
+            Console.WriteLine("Total num of die rolls = "+rollCount);
             Console.Read();
         }
     }
